@@ -1,16 +1,8 @@
-/* ============================================
-   Radh Shahmat — Portfolio Navbar
-   Dark editorial theme with gold accents
-   ============================================ */
-:root {
-  --bg: #0c0a09;
-  --bg-glass: rgba(12, 10, 9, 0.82);
-  --cream: #f4f1ea;
-  --muted: #948f85;
-  --gold: #c9a961;
-  --hairline: rgba(201, 169, 97, 0.16);
-}
+/* ============================================ */
+/* CSS (style.css)                              */
+/* ============================================ */
 
+/* ----- RESET & BASE ----- */
 * {
   margin: 0;
   padding: 0;
@@ -18,126 +10,203 @@
 }
 
 body {
-  background-color: var(--bg);
-  font-family: 'Jost', 'Segoe UI', sans-serif;
-}
-
-/* Two-column navbar: logo (left) | nav links (right) */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f9fafc;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 26px clamp(24px, 6vw, 64px);
-  background-color: var(--bg-glass);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--hairline);
+  justify-content: flex-start;
+  padding: 2rem 1.5rem;
 }
 
-/* Left column — logo */
+/* ----- NAVBAR CONTAINER (beautiful card) ----- */
+.navbar {
+  width: 100%;
+  max-width: 1280px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border-radius: 3rem;
+  box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.2),
+              0 8px 24px -6px rgba(0, 0, 0, 0.04);
+  padding: 0.9rem 2.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  margin-bottom: 2rem;
+}
+
+.navbar:hover {
+  box-shadow: 0 28px 48px -16px rgba(0, 40, 60, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ----- 2‑COLUMN GRID (left: auto, right: 1fr) ----- */
+.nav-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem 2rem;
+}
+
+/* ----- LEFT COLUMN : LOGO (name) ----- */
 .logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 25px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: var(--cream);
+  font-size: 1.75rem;
+  font-weight: 620;
+  letter-spacing: -0.02em;
+  color: #0b1e2b;
   text-decoration: none;
-  display: inline-flex;
-  gap: 8px;
-  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  padding: 0.2rem 0;
+  /* gradient text */
+  background: linear-gradient(135deg, #15303f 0%, #2b5a6e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform 0.2s ease;
+  display: inline-block;
 }
 
 .logo:hover {
-  opacity: 0.85;
+  transform: scale(1.02);
 }
 
-.logo span {
-  color: var(--gold);
-  font-style: italic;
-  font-weight: 500;
+/* subtle underline accent under logo */
+.logo::after {
+  content: '';
+  display: block;
+  width: 36%;
+  height: 3px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #3a7b8f, #78c0d4);
+  margin-top: 3px;
+  -webkit-text-fill-color: initial;
+  transition: width 0.25s ease;
 }
 
-/* Right column — nav links */
-.nav-links {
-  list-style: none;
+.logo:hover::after {
+  width: 70%;
+}
+
+/* ----- RIGHT COLUMN : NAV LIST ----- */
+.nav-list {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
-  gap: clamp(20px, 4vw, 44px);
+  gap: 0.4rem 1.4rem;
+  list-style: none;
 }
 
-.nav-links a {
+.nav-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
   position: relative;
-  color: var(--muted);
   text-decoration: none;
-  font-size: 12.5px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding-bottom: 6px;
-  transition: color 0.3s ease;
+  font-size: 1.05rem;
+  font-weight: 470;
+  color: #1f3b4a;
+  padding: 0.4rem 0.15rem;
+  transition: color 0.2s ease;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
-.nav-links a::after {
-  content: "";
+/* elegant hover underline (slide) */
+.nav-list a::after {
+  content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 1px;
-  background-color: var(--gold);
-  transition: width 0.35s ease;
+  bottom: -2px;
+  width: 0;
+  height: 2.5px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #3a8b9f, #7ac2d6);
+  transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.nav-links a:hover {
-  color: var(--cream);
+.nav-list a:hover {
+  color: #0d293b;
 }
 
-.nav-links a:hover::after {
+.nav-list a:hover::after {
   width: 100%;
 }
 
-/* Visible keyboard focus */
-.logo:focus-visible,
-.nav-links a:focus-visible {
-  outline: 1px solid var(--gold);
-  outline-offset: 4px;
-  border-radius: 2px;
+/* active state (Home) */
+.nav-list a.active {
+  color: #13556b;
+  font-weight: 520;
 }
 
-/* Demo placeholder — remove when integrating into your real page */
-.demo-content {
-  min-height: 160vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 100px 40px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
-  text-align: center;
+.nav-list a.active::after {
+  width: 100%;
+  background: #2a7b8f;
 }
 
-/* Responsive: stack columns on narrow screens */
-@media (max-width: 640px) {
+/* ----- RESPONSIVE : stack on smaller screens ----- */
+@media (max-width: 700px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
+    padding: 1rem 1.5rem;
+    border-radius: 2.2rem;
   }
 
-  .nav-links {
-    flex-wrap: wrap;
+  .nav-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    text-align: center;
+    justify-self: center;
+  }
+
+  .logo::after {
+    margin-left: auto;
+    margin-right: auto;
+    width: 28%;
+  }
+
+  .logo:hover::after {
+    width: 50%;
+  }
+
+  .nav-list {
+    justify-content: center;
+    gap: 0.5rem 1.1rem;
+  }
+
+  .nav-list a {
+    font-size: 0.95rem;
+    padding: 0.25rem 0.1rem;
   }
 }
 
-/* Respect reduced-motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .logo,
-  .nav-links a,
-  .nav-links a::after {
-    transition: none;
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+    border-radius: 1.8rem;
+  }
+
+  .nav-list {
+    gap: 0.3rem 0.7rem;
+  }
+
+  .nav-list a {
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-list a {
+    font-size: 0.75rem;
   }
 }

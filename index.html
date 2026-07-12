@@ -1,28 +1,40 @@
+<!-- ============================================ -->
+<!-- HTML (index.html)                            -->
+<!-- ============================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Radh Shahmat | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radh Shahmat · Portfolio</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-grid">
+      <!-- Left column: logo (name) -->
+      <div class="logo">Radh Shahmat</div>
 
-  <nav class="navbar" aria-label="Primary">
-    <a href="#home" class="logo">Radh<span>Shahmat</span></a>
-
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#project">Project</a></li>
-      <li><a href="#about">About&nbsp;Me</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#skills">Skills</a></li>
-    </ul>
+      <!-- Right column: nav items -->
+      <ul class="nav-list">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Project</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Skills</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <main class="demo-content">
-    <p>Scroll down to see the sticky, glass-blur navbar in action.<br>Swap this section for your real homepage content.</p>
+  <!-- (your page content goes here) -->
+  <main style="padding: 2rem; text-align: center; font-family: 'Inter', sans-serif; color: #1f3b4a;">
+    <h1 style="font-weight: 400; font-size: 2.2rem;">✨ Portfolio</h1>
   </main>
-
 </body>
 </html>
