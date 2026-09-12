@@ -432,10 +432,11 @@
           <div class="skill-tag" style="--delay: 0.5s">JavaScript (ES6+)</div>
           <div class="skill-tag" style="--delay: 0.6s">TypeScript</div>
           <div class="skill-tag" style="--delay: 0.7s">React</div>
+          <div class="skill-tag" style="--delay: 0.8s">Redux</div>
         </div>
         <div class="category-progress">
           <div class="progress-bar" style="width: 92%">
-            <span class="progress-label"></span>
+            <span class="progress-label">92%</span>
           </div>
         </div>
         <div class="category-glow"></div>
@@ -459,10 +460,12 @@
           <div class="skill-tag" style="--delay: 0.5s">MongoDB</div>
           <div class="skill-tag" style="--delay: 0.6s">Mongoose</div>
           <div class="skill-tag" style="--delay: 0.7s">SQL</div>
+          <div class="skill-tag" style="--delay: 0.8s">PostgreSQL</div>
+          <div class="skill-tag" style="--delay: 0.9s">Prisma</div>
         </div>
         <div class="category-progress">
           <div class="progress-bar" style="width: 88%">
-            <span class="progress-label"></span>
+            <span class="progress-label">88%</span>
           </div>
         </div>
         <div class="category-glow"></div>
@@ -486,10 +489,11 @@
           <div class="skill-tag" style="--delay: 0.6s">Git</div>
           <div class="skill-tag" style="--delay: 0.7s">GitHub</div>
           <div class="skill-tag" style="--delay: 0.8s">Git Workflows</div>
+          <div class="skill-tag" style="--delay: 0.9s">CI/CD</div>
         </div>
         <div class="category-progress">
           <div class="progress-bar" style="width: 85%">
-            <span class="progress-label"></span>
+            <span class="progress-label">85%</span>
           </div>
         </div>
         <div class="category-glow"></div>
@@ -517,7 +521,7 @@
         </div>
         <div class="category-progress">
           <div class="progress-bar" style="width: 82%">
-            <span class="progress-label"></span>
+            <span class="progress-label">82%</span>
           </div>
         </div>
         <div class="category-glow"></div>
@@ -684,28 +688,33 @@
             I'll get back to you as soon as possible
           </p>
           
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form" action="https://formsubmit.co/radhshahmat91@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+            <input type="hidden" name="_next" value="https://radhshahmat91.github.io/Portfolio/#contact">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
+
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" id="name" placeholder="John Doe" required />
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
               <span class="input-focus"></span>
             </div>
 
             <div class="form-group">
               <label for="email">Your Email</label>
-              <input type="email" id="email" placeholder="john@example.com" required />
+              <input type="email" id="email" name="email" placeholder="john@example.com" required />
               <span class="input-focus"></span>
             </div>
 
             <div class="form-group">
               <label for="subject">Subject</label>
-              <input type="text" id="subject" placeholder="Project Collaboration" required />
+              <input type="text" id="subject" name="subject" placeholder="Project Collaboration" required />
               <span class="input-focus"></span>
             </div>
 
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+              <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
               <span class="input-focus"></span>
             </div>
 
@@ -717,36 +726,9 @@
               <span class="btn-loader"></span>
             </button>
 
-            <p class="form-note">This will open your email app with the message addressed to radhshahmat91@gmail.com.</p>
+            <p class="form-note">Your message will be sent directly to my email.</p>
           </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<script>
-  document.getElementById("contactForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    const body =
-      "Name: " + name + "\n" +
-      "Email: " + email + "\n\n" +
-      message;
-
-    const mailto =
-      "mailto:radhshahmat91@gmail.com" +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(body);
-
-    window.location.href = mailto;
-  });
-</script>
 
 </body>
 </html>
